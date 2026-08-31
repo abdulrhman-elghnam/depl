@@ -39,8 +39,8 @@ app.post("/user", async (req, res, next) => {
    }
 })
 
-app.get("/user", async (req, res, next) => {
-    const serviceFeedback = await databaseName.collection("user").findOne({name:ahmed})
+app.get("/user/:username", async (req, res, next) => {
+    const serviceFeedback = await databaseName.collection("user").findOne({name:req.params.username})
     console.log(serviceFeedback);
     return res.status(200).json({ msg: "done", data: serviceFeedback })
 })
