@@ -10,8 +10,7 @@ const getData = async () => {
     }
 }
 
-
-const connection = new  mongo.MongoClient()
+const connection = new  mongo.MongoClient("mongodb+srv://zjr8oo:NAwpwq6xeJKenHmr@cluster0.dhgpzld.mongodb.net/?appName=Cluster0")
 
 
 
@@ -41,7 +40,7 @@ app.post("/user", async (req, res, next) => {
 })
 
 app.get("/user", async (req, res, next) => {
-    const serviceFeedback = await databaseName.collection("user").findOne({name : "ahmed"})
+    const serviceFeedback = await databaseName.collection("user").findOne({name:ahmed})
     console.log(serviceFeedback);
     return res.status(200).json({ msg: "done", data: serviceFeedback })
 })
