@@ -8,7 +8,7 @@ const getData = async () => {
             name: "ahmed",
             age: 24,
         }
-    }, 450)
+    }, 3000)
 }
 
 app.listen(3000, () => {
