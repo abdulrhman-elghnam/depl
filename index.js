@@ -8,7 +8,7 @@ const app =  express()
             name : "ahmed",
             age : 24,
         }
-    },5000)
+    },450)
 }
 
 app.listen(3000,()=>{
