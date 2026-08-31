@@ -4,15 +4,7 @@ import mongo from "mongodb"
 const app = express()
 app.use(express.json());
 
-const getData = async () => {
-    return {
-        name : "ahmed"
-    }
-}
-
 const connection = new  mongo.MongoClient("mongodb+srv://zjr8oo:NAwpwq6xeJKenHmr@cluster0.dhgpzld.mongodb.net/?appName=Cluster0")
-
-
 
 app.listen(3000, async () => {
     await connection.connect().then(()=>{
@@ -26,8 +18,6 @@ const databaseName = connection.db("test");
 app.get("/", (req, res, next) => {
     res.status(200).json({ msg: "hi from backed side " })
 })
-
-
 
 app.post("/user", async (req, res, next) => {
    try {
