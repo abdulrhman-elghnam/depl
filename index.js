@@ -21,6 +21,8 @@ app.get("/", (req, res, next) => {
 
 
 app.get("/user", async (req, res, next) => {
+    
     const serviceFeedback = await getData()
-    res.status(200).json({ msg: "done", data: serviceFeedback })
+    console.log(serviceFeedback);
+    return res.status(200).json({ msg: "done", data: serviceFeedback })
 })
