@@ -3,12 +3,10 @@ import express from "express"
 const app = express()
 
 const getData = async () => {
-    setTimeout(() => {
-        return {
-            name: "ahmed",
-            age: 24,
-        }
-    }, 3000)
+    return {
+        name : "ahmed"
+    }
+
 }
 
 app.listen(3000, () => {
@@ -21,7 +19,7 @@ app.get("/", (req, res, next) => {
 
 
 app.get("/user", async (req, res, next) => {
-    
+
     const serviceFeedback = await getData()
     console.log(serviceFeedback);
     return res.status(200).json({ msg: "done", data: serviceFeedback })
